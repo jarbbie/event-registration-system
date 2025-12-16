@@ -1,12 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Attendees() {
-  const [list, setList] = useState([
-    { id: 1, firstname: "John", lastname: "Doe", gender: "Male", age: 25, weight: 70, height: 175 } // Example data
-  ]);
+  const [list, setList] = useState([]);
 
-  const handleDelete = (id) => {
-    setList(list.filter(item => item.id !== id));
+  const fetchAttendees = async () => {
+    try {
+      const response = await fetch("http://localhost:8000/data");
+      const data = await response.json();
+      setList(data);
+    }
+    catch (error) {
+      console.error(error.message);
+    }
+  };
+
+  useEffect( () => { fetchAttendees(); }, []);
+
+  const handleDelete = async (id) => {
+    try {
+      await fetch(`http://localhost:8000/data/${id}`, {
+        method: "DELETE",
+      });
+      setList(list.filter(user => user.id !== id));
+    }
+    catch (error) {
+      console.error(error.message);
+    }
   };
 
   return (
