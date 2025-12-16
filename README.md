@@ -27,6 +27,25 @@ jsyk : This is my first PERN stack webapp. I'm practicing Docker and CI/CD in th
 └── package-lock.json
 ```
 
+## My Plan
+If the steps is not efficient or wrong, please let me know by posting in **Issues** 
+
+### 1. Initialize frontend and backend
+
+### 2. Structure frontend
+
+### 3. Create Database
+
+### 4. Create Endpoints in backend
+
+### 5. Finalize frontend structure
+
+### 6. Set up Deployment, Docker, and CI/CD
+
+### 7. Decorate frontend
+
+### 8. Recheck and Bug fixing
+
 ## Installation
 WIP
 
