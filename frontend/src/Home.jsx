@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./Home.css";
 
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:8000";
+
 function Home() {
   const [formData, setFormData] = useState({
     firstname: "",
@@ -14,7 +16,7 @@ function Home() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:8000/data", {
+      const response = await fetch(`${API_URL}/data`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
