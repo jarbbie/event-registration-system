@@ -3,8 +3,7 @@ const cors = require("cors");
 const e = require("express");
 const pool = require("./db");
 
-const host = "localhost";
-const port = 8000;
+const port = process.env.PORT || 8000;
 
 const app = express();
 
@@ -66,5 +65,5 @@ app.delete("/data/:id", async (req, res) => {
 });
 
 app.listen(port, (req, res) => {
-  console.log(`The server is running at http://${host}:${port}`);
+  console.log(`The server is running`);
 });
