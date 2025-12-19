@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install --legacy-peer-deps --network-timeout 100000
+RUN npm install
 
 COPY . .
 
