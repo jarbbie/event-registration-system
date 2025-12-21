@@ -40,7 +40,7 @@ services:
     stdin_open: true
     tty: true
     environment:
-      REACT_APP_API_URL: http://localhost:${BACKEND_PORT}
+      REACT_APP_API_URL: ${REACT_APP_API_URL}
     volumes:
       - ./frontend:/app
       - frontend_modules:/app/node_modules

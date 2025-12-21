@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:8000";
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:8000/data";
 
 function Attendees() {
   const [list, setList] = useState([]);
 
   const fetchAttendees = async () => {
     try {
-      const response = await fetch(`${API_URL}/data`);
+      const response = await fetch(`${API_URL}`);
       const data = await response.json();
       setList(data);
     }
@@ -20,7 +20,7 @@ function Attendees() {
 
   const handleDelete = async (id) => {
     try {
-      await fetch(`${API_URL}/data/${id}`, {
+      await fetch(`${API_URL}/${id}`, {
         method: "DELETE",
       });
       setList(list.filter(user => user.id !== id));
