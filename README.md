@@ -10,6 +10,7 @@ The system is fully containerized using **Docker** and uses **Nginx** as a rever
 
 ## Tech Stack
 * **Frontend:** React.js
+* **Backend:** Node.js, Express.js
 * **Database:** PostgreSQL
 * **DevOps:** Docker, Docker Compose, Nginx, GitHub Actions
 
